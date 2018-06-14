@@ -1,0 +1,17 @@
+<section>
+  <header>
+    <input placeholder="enter todo title" [(ngModel)]="newTodo.title" (keyup.enter)= "addTodo()"/>
+
+    <section *ngIf="todos.length > 0; else elsePart">
+      <p *ngFor = "let todo of todos">
+        {{todo.title}} <input type="checkbox" (click) ="toggleTodoComplete(todo)" />
+        <input type="button" (click) ="deleteTodoById(todo.id)"/>
+      </p>
+      hello from shree
+    </section>
+    <ng-template #elsePart>no records are available</ng-template>
+
+    
+  </header>
+  
+</section>
